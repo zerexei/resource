@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid CSS</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <style>
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card__header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+    }
+  </style>
+
+  <body>
+    <article id="grid" class="example__cards m-12">
+      <section class="card">
+        <div class="card__wrapper">
+          <div class="card__header">
+            <h2 class="card__title">Lorem Ipsum</h2>
+            <span class="card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="card__body">
+            <figure>
+              <img src="https://picsum.photos/200" alt="card image" />
+            </figure>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique sit rerum deserunt, eaque nisi incidunt magnam eius
+              aliquam, dicta odit officia repudiandae debitis accusantium, ipsum
+              sequi ad animi quia expedita.
+            </p>
+          </div>
+          <div class="card__footer"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__wrapper">
+          <div class="card__header">
+            <h2 class="card__title">Lorem Ipsum</h2>
+            <span class="card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="card__body">
+            <figure>
+              <img src="https://picsum.photos/200" alt="card image" />
+            </figure>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique sit rerum deserunt, eaque nisi incidunt magnam eius
+              aliquam, dicta odit officia repudiandae debitis accusantium, ipsum
+              sequi ad animi quia expedita.
+            </p>
+          </div>
+          <div class="card__footer"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__wrapper">
+          <div class="card__header">
+            <h2 class="card__title">Lorem Ipsum</h2>
+            <span class="card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="card__body">
+            <figure>
+              <img src="https://picsum.photos/200" alt="card image" />
+            </figure>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Similique sit rerum deserunt, eaque nisi incidunt magnam eius
+              aliquam, dicta odit officia repudiandae debitis accusantium, ipsum
+              sequi ad animi quia expedita.
+            </p>
+          </div>
+          <div class="card__footer"></div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
