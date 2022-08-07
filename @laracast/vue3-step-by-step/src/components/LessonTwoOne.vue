@@ -1,0 +1,29 @@
+<script setup>
+// define props
+defineProps({
+  modelValue: String,
+});
+
+// define emits - update model on custom component
+let emit = defineEmits(['update:modelValue']);
+
+// Add tab on text area
+function onTabPress(e) {
+  let textarea = e.target;
+
+  let val = textarea.value,
+    start = textarea.selectionStart,
+    end = textarea.selectionEnd;
+
+  textarea.value = val.substring(0, start) + '\t' + val.substring(end);
+  textarea.selectionStart = textarea.selectionEnd = start + 1;
+}
+</script>
+
+<template>
+  <textarea
+    @keydown.tab.prevent="onTabPress"
+    @keyup="emit('update:modelValue', $event.target.value)"
+    v-text="modelValue"
+  />
+</template>
