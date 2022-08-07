@@ -1,7 +1,8 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
-import TheWelcome from './components/TheWelcome.vue';
-import LessonTwoOne from './components/LessonTwoOne.vue';
+// import TheWelcome from './components/TheWelcome.vue';
+// import LessonTwoOne from './components/LessonTwoOne.vue';
+import LessonTwoTwo from './components/LessonTwoTwo.vue';
 import { ref } from 'vue';
 
 let comment = ref('test string.');
@@ -25,7 +26,8 @@ let comment = ref('test string.');
   <main>
     <!-- <TheWelcome /> -->
     <!-- style cascade to the root element -->
-    <lesson-two-one v-model="comment" style="width:100%; height: 300px"></lesson-two-one>
+    <!-- <lesson-two-one v-model="comment" style="width:100%; height: 300px"></lesson-two-one> -->
+    <lesson-two-two></lesson-two-two>
   </main>
 </template>
 
