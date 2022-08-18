@@ -3,6 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import MultiAttributes from './components/MultiAttributes.vue';
 import ReactiveState from './components/ReactiveState.vue';
+import ComposablesTest from './components/ComposablesTest.vue';
 
 // // computed()
 // const fullName = computed({
@@ -30,7 +31,8 @@ import ReactiveState from './components/ReactiveState.vue';
   <main>
     <!-- <TheWelcome /> -->
     <!-- <MultiAttributes /> -->
-    <ReactiveState />
+    <!-- <ReactiveState /> -->
+    <ComposablesTest />
   </main>
 </template>
 
