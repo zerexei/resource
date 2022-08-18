@@ -1,11 +1,11 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
-// import TheWelcome from './components/TheWelcome.vue';
-// import LessonTwoOne from './components/LessonTwoOne.vue';
-import LessonTwoTwo from './components/LessonTwoTwo.vue';
-import { ref } from 'vue';
+import HelloWorld from '@/components/HelloWorld.vue';
+// import TheWelcome from '@/components/TheWelcome.vue';
+// import LessonTwoOne from '@/components/LessonTwoOne.vue';
+// import { ref } from 'vue';
+// let comment = ref('test string.');
 
-let comment = ref('test string.');
+import LessonTwoTwo from '@/components/LessonTwoTwo.vue';
 </script>
 
 <template>
