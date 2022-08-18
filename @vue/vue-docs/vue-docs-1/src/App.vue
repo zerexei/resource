@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import MultiAttributes from './components/MultiAttributes.vue';
 </script>
 
 <template>
@@ -13,7 +14,9 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <!-- <TheWelcome /> -->
+    <MultiAttributes />
+    
   </main>
 </template>
 
