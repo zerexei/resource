@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import MultiAttributes from './components/MultiAttributes.vue';
+import ReactiveState from './components/ReactiveState.vue';
 </script>
 
 <template>
@@ -15,8 +16,8 @@ import MultiAttributes from './components/MultiAttributes.vue';
 
   <main>
     <!-- <TheWelcome /> -->
-    <MultiAttributes />
-    
+    <!-- <MultiAttributes /> -->
+    <ReactiveState />
   </main>
 </template>
 
