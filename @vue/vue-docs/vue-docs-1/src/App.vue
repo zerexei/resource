@@ -3,6 +3,19 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import MultiAttributes from './components/MultiAttributes.vue';
 import ReactiveState from './components/ReactiveState.vue';
+
+// // computed()
+// const fullName = computed({
+//   // getter
+//   get() {
+//     return firstName.value + ' ' + lastName.value
+//   },
+//   // setter
+//   set(newValue) {
+//     // Note: we are using destructuring assignment syntax here.
+//     [firstName.value, lastName.value] = newValue.split(' ')
+//   }
+// })
 </script>
 
 <template>
