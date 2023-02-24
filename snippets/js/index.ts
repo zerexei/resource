@@ -31,6 +31,7 @@ function throttle(func, delay: number) {
     }, delay);
   };
 }
+
 /**
  * execute only once
  */
@@ -39,8 +40,29 @@ function once(func) {
   let result: unknown;
   return function () {
     if (ran) return result;
+
     result = func.apply(this, arguments);
     ran = true;
+    return result;
+  };
+}
+
+/**
+ * cache the operation
+ */
+function memoize(func) {
+  const cache: Map<string, unknown> = new Map();
+
+  return function () {
+    // return cache if exists
+    const key: string = JSON.stringify(arguments);
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+
+    // cache
+    const result: unknown = func.apply(this, arguments);
+    cache.set(key, result);
     return result;
   };
 }
