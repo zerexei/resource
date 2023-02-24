@@ -31,3 +31,16 @@ function throttle(func, delay: number) {
     }, delay);
   };
 }
+/**
+ * execute only once
+ */
+function once(func) {
+  let ran: boolean = false;
+  let result: unknown;
+  return function () {
+    if (ran) return result;
+    result = func.apply(this, arguments);
+    ran = true;
+    return result;
+  };
+}
