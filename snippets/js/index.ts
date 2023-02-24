@@ -13,3 +13,21 @@ function debounce(func, delay: number) {
   };
 }
 
+/**
+ *  execute at a maximum of once per delay
+ */
+function throttle(func, delay: number) {
+  let wait: boolean = false;
+
+  return (...args) => {
+    if (wait) {
+      return;
+    }
+
+    func(...args);
+    wait = true;
+    setTimeout(() => {
+      wait = false;
+    }, delay);
+  };
+}
