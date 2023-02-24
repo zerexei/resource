@@ -66,3 +66,67 @@ function memoize(func) {
     return result;
   };
 }
+
+// advance js
+function curry(func, arity = func.length) {
+  return function curried(...args) {
+    if (args.length >= arity) return func(...args);
+    return function (...moreArgs) {
+      return curried(...args, ...moreArgs);
+    };
+  };
+}
+
+function partial(func, ...args) {
+  return function partiallyApplied(...moreArgs) {
+    return func(...args, ...moreArgs);
+  };
+}
+
+
+// utilities - pipe 2 or more functions (just chain it)
+function pipe(...funcs) {
+  return function piped(...args) {
+    return funcs.reduce(
+      (result, func) => [func.call(this, ...result)],
+      args
+    )[0];
+  };
+}
+
+// same as pipe but reversed
+function compose(...funcs) {
+  return function composed(...args) {
+    return funcs.reduceRight(
+      (result, func) => [func.call(this, ...result)],
+      args
+    )[0];
+  };
+}
+
+// same as laravel pluck
+
+function pick(obj, keys) {
+  return keys.reduce((acc, key) => {
+    if (obj.hasOwnProperty(key)) {
+      acc[key] = obj[key];
+    }
+    return acc;
+  }, {});
+}
+
+function omit(obj, keys) {
+  return Object.keys(obj)
+    .filter((key) => !keys.includes(key))
+    .reduce((acc, key) => {
+      acc[key] = obj[key];
+      return acc;
+    }, {});
+}
+
+function zip(...arrays) {
+  const maxLength = Math.max(...arrays.map((array) => array.length));
+  return Array.from({ length: maxLength }).map((_, i) => {
+    return Array.from({ length: arrays.length }, (_, j) => arrays[j][i]);
+  });
+}
