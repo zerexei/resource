@@ -2,6 +2,9 @@
     !# stopped @ tuts 15
     TODO: research
     - axios.cancelToken 
+
+
+    - $route.meta +> custom attribute
 -->
 
 <!-- <script setup lang="ts">
