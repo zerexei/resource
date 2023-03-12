@@ -4,3 +4,6 @@
     <div>{{element.name}}</div>
   </template>
 </draggable>
+
+
+https://github.com/antoine92190/vue-advanced-chat
