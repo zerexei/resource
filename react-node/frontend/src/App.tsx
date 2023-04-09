@@ -3,13 +3,17 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import ThisThatApp from './ThisThatApp';
+import Todo from './Todo';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-
+      {/* TODO APP */}
+      <div>
+        <Todo />
+      </div>
 
       {/* THIS or THAT GAME */}
       <div className='hidden'>
