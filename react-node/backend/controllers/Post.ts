@@ -10,7 +10,7 @@ export default {
         res.send(posts);
     },
     async show(req: Request, res: Response) {
-        const post = await post_model.find(req.params.id);
+        const post = await post_model.find(Number(req.params.id));
         res.send(post);
     },
     async store(req: Request, res: Response) {
@@ -22,10 +22,17 @@ export default {
         const post = await post_model.create(new_post);
         res.send(post);
     },
-    update() {
-        return 'post/update';
+    async update(req: Request, res: Response) {
+        const post = {
+            title: req.body?.title,
+            content: req.body?.content,
+            published: req.body?.published ? true : false,
+        };
+        const updated_post = await post_model.update(Number(req.params.id), post);
+        res.send(updated_post);
     },
-    destroy() {
-        return 'post/destroy';
+    async destroy(req: Request, res: Response) {
+        const post = await post_model.delete(Number(req.params.id));
+        res.send(post);
     },
 };

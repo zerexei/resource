@@ -19,3 +19,8 @@ app.use('/posts', Post);
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
+
+// TODO:
+// - improve security (try/catch)
+// - add authentication
+// - add authorization
