@@ -1,8 +1,11 @@
 import express, { Express, Request, Response } from 'express';
+import cors from 'cors';
 import Post from './routes/Post';
 
 const app: Express = express();
 const port = 3001;
+
+app.use(cors())
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello woold!');
