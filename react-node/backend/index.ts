@@ -1,11 +1,14 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import Post from './routes/Post';
+import bodyParser from 'body-parser';
 
 const app: Express = express();
 const port = 3001;
 
 app.use(cors())
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello woold!');
