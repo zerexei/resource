@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import PostList from './PostList';
 import PostCreate from './PostCreate';
 import PostShow from './PostShow';
+import PostEdit from './PostEdit';
 
 export interface PostType {
   id: number;
@@ -47,8 +48,11 @@ const Post = () => {
     setSelectedPost(selected_post);
   }
 
+  function handleCancel() {
+    setSelectedPost(null);
+  }
   return (
-    <div className="flex gap-4 border border-red-400 p-12 text-left">
+    <div className="flex gap-12 border border-red-400 p-12 text-left">
       <div className="flex-1">
         <PostShow post={selectedPost} />
         <hr className="my-6" />
@@ -58,7 +62,14 @@ const Post = () => {
           handleSelectedPost={handleSelectedPost}
         />
       </div>
-      <PostCreate onSubmit={appendPost} />
+      <div className="flex flex-col w-[33rem]">
+        <PostCreate onSubmit={appendPost} />
+        <PostEdit
+          post={selectedPost}
+          onSubmit={() => {}}
+          onCancel={handleCancel}
+        />
+      </div>
     </div>
   );
 };
