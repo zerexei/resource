@@ -18,3 +18,6 @@
 - setup authorization
 - CRUD API
 - X clone
+
+
+fast, scalable, and secure
