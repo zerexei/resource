@@ -11,13 +11,14 @@ export default {
         return 'post/show'
     },
     async store(req: Request, res: Response) {
-        const new_post: NewPostType = {
-            title: req.body.title,
-            content: req.body.content,
-            published: req.body?.published
-        }
-        const post = await post_model.create(new_post);
-        return res.send(post);
+        // const new_post: NewPostType = {
+        //     title: req.body.title,
+        //     content: req.body.content,
+        //     published: req.body?.published
+        // }
+        // const post = await post_model.create(new_post);
+        //  res.send(post);
+         res.send('hello');
     },
     update() {
         return 'post/update'

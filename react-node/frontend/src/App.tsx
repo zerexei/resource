@@ -4,14 +4,20 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import ThisThatApp from './ThisThatApp';
 import Todo from './Todo';
+import Post from './Post';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      {/* TODO APP */}
+      {/* POST APP */}
       <div>
+        <Post />
+      </div>
+
+      {/* TODO APP */}
+      <div className='hidden'>
         <Todo />
       </div>
 
