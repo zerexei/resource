@@ -9,8 +9,9 @@ export default {
         const posts = await post_model.all();
         res.send(posts);
     },
-    show() {
-        return 'post/show';
+    async show(req: Request, res: Response) {
+        const post = await post_model.find(req.params.id);
+        res.send(post);
     },
     async store(req: Request, res: Response) {
         const new_post: NewPostType = {
