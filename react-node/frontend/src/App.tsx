@@ -17,12 +17,12 @@ function App() {
       </div>
 
       {/* TODO APP */}
-      <div className='hidden'>
+      <div className="hidden">
         <Todo />
       </div>
 
       {/* THIS or THAT GAME */}
-      <div className='hidden'>
+      <div className="hidden">
         <ThisThatApp />
       </div>
 

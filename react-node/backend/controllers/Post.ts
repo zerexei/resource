@@ -5,7 +5,10 @@ const prisma = new PrismaClient();
 
 const post_model = new Post();
 export default {
-    async index(req: Request, res: Response) { },
+    async index(req: Request, res: Response) {
+        const posts = await post_model.all();
+        res.send(posts);
+    },
     show() {
         return 'post/show';
     },

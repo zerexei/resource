@@ -12,4 +12,9 @@ export default class extends Model {
         await this._db.$disconnect();
         return post;
     }
+
+    async all() {
+        const posts = await this._db.post.findMany();
+        return posts;
+    }
 }
