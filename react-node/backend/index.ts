@@ -21,6 +21,7 @@ app.listen(port, () => {
 });
 
 // TODO:
+// - improve naming convention
 // - improve security (try/catch)
 // - add authentication
 // - add authorization

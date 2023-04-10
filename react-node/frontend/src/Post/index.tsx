@@ -48,6 +48,16 @@ const Post = () => {
     setSelectedPost(selected_post);
   }
 
+  function handleUpdatePost(updated_post: PostType) {
+    setPosts((prevPosts) => {
+      return prevPosts.map((post) => {
+        if (post.id === updated_post.id) {
+          return updated_post;
+        }
+        return post;
+      });
+    });
+  }
   function handleCancel() {
     setSelectedPost(null);
   }
@@ -63,10 +73,10 @@ const Post = () => {
         />
       </div>
       <div className="flex flex-col w-[33rem]">
-        <PostCreate onSubmit={appendPost} />
+        {!selectedPost && <PostCreate onSubmit={appendPost} />}
         <PostEdit
           post={selectedPost}
-          onSubmit={() => {}}
+          onSubmit={handleUpdatePost}
           onCancel={handleCancel}
         />
       </div>

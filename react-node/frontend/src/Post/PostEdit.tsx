@@ -14,21 +14,20 @@ const PostEdit = ({ post, onSubmit, onCancel }: PostEditType) => {
   async function handleSubmit(e: any) {
     e.preventDefault();
 
+    if (!post?.id) return;
     if (!formRef.current) return; // log error
 
     const formData = new FormData(formRef.current);
 
     if (formData.get('title') === '') return;
 
-    const res = await fetch(`${host}/posts`, {
+    const res = await fetch(`${host}/posts/${post.id}`, {
       method: 'PATCH',
       body: formData,
     });
 
-    const post = await res.json();
-    console.log(post);
-
-    // onSubmit(post);
+    const updated_post = await res.json();
+    onSubmit(updated_post);
   }
   if (!post?.id) return <span></span>;
 
@@ -38,38 +37,38 @@ const PostEdit = ({ post, onSubmit, onCancel }: PostEditType) => {
         <h2 className="text-2xl">Edit a post {post.id}</h2>
         {/* TITLE */}
         <div className="text-left">
-          <label htmlFor="title" className="block mb-px">
+          <label htmlFor="edit-title" className="block mb-px">
             Title
           </label>
           <input
             defaultValue={post.title}
             type="text"
             name="title"
-            id="title"
+            id="edit-title"
             className="w-full py-2 px-4 rounded"
           />
         </div>
         {/* CONTENT */}
         <div className="text-left">
-          <label htmlFor="content" className="block mb-px">
+          <label htmlFor="edit-content" className="block mb-px">
             Content
           </label>
           <textarea
             defaultValue={post.content}
             name="content"
-            id="content"
+            id="edit-content"
             className="w-full px-4 py-2"
           ></textarea>
         </div>
         {/* Publish */}
         <div className="flex justify-center items-center gap-2">
           <input
-            id="publish"
+            id="edit-publish"
             type="checkbox"
             name="published"
-            checked={post.published}
+            defaultChecked={post.published}
           />
-          <label htmlFor="publish" className="cursor-pointer select-none">
+          <label htmlFor="edit-publish" className="cursor-pointer select-none">
             publish?
           </label>
         </div>
