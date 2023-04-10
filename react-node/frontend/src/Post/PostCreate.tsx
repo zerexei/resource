@@ -20,7 +20,7 @@ const PostCreate = ({ onSubmit }: PostCreateType) => {
     if (formData.get('title') === '') return;
 
     const res = await fetch(`${host}/posts`, {
-      method: 'Post',
+      method: 'POST',
       body: formData,
     });
 

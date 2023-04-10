@@ -61,8 +61,27 @@ const Post = () => {
   function handleCancel() {
     setSelectedPost(null);
   }
+
+  const formRef = useRef<HTMLFormElement>(null);
+  async function handleFileSubmit(e: any) {
+    e.preventDefault();
+
+    if (!formRef.current) return; // log error
+
+    const formData = new FormData(formRef.current);
+    const res = await fetch(`${host}/files`, {
+      method: 'POST',
+      body: formData,
+    });
+
+    console.log(await res.json());
+  }
   return (
     <div className="flex gap-12 border border-red-400 p-12 text-left">
+      <form ref={formRef} onSubmit={handleFileSubmit}>
+        <input type="file" name="image" />
+        <button type="submit">Submit</button>
+      </form>
       <div className="flex-1">
         <PostShow post={selectedPost} />
         <hr className="my-6" />
