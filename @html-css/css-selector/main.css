@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 5rem;
+}
+
+hr {
+  margin: 5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-6 {
+  margin: 1.25rem 0;
+}
+
+.grow {
+  transition: font-size 0.3s ease-in-out;
+}
+.hover\:grow:hover {
+  font-size: 3.25rem;
+  cursor: pointer;
+}
+/* NAMING THINGS SUCKS */
+.parent1 {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 15rem;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 1rem;
+  background-color: lightgrey;
+}
+.child1 {
+  grid-row: 1/1;
+  padding: 1rem;
+  background-color: lightcoral;
+}
+.child2 {
+  grid-row: 1/4;
+  padding: 1rem;
+  background-color: lightblue;
+}
+.child3 {
+  grid-row: 2/4;
+  padding: 1rem;
+  background-color: lightyellow;
+}
+
+/* start */
+[title^="foo"],
+
+/* end */
+[title$="foo"],
+
+/* any */
+[title*="foo"],
+
+/* contains */
+[title~="foo"],
+
+/* exact foo-* | match start followed by hyphen */
+[title|="foo"],
+
+/* exact */
+[title],
+[title="foo"] {
+  color: blue;
+}
+
+a[href^="https://"]:hover::after
+{
+  content: '(https link)';
+  margin-left: 5px;
+}
+
+:target {
+  background-color: gold;
+}
+
+:enabled {
+  border: 1px solid red;
+}
+
+/* label + input */
+label:has(input:indeterminate) {
+  border: 1px solid red;
+  /* outline: 1px solid red; */
+}
+/* :indete
+:read-only,
+:read-write{} */
+
+.password:has(input:placeholder-shown) label::after {
+  content: '*';
+  color: red;
+}
+
+.animate-scale {
+  animation: scale 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scale {
+  0% {
+    
+  }
+
+  100% {
+
+  }
+}
